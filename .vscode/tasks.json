@@ -1,0 +1,39 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        // Linux
+        {
+            "label": "Motors: Build all (Linux)",
+            "group": "build",
+            "type": "shell",
+            "command": "make",
+            "args": ["-C", "BLDC_FOC_settings", "all", "-j4"],
+            "linux": {}
+        },
+        {
+            "label": "Motors: Build clean (Linux)",
+            "group": "build",
+            "type": "shell",
+            "command": "make",
+            "args": ["-C", "BLDC_FOC_settings", "clean"],
+            "linux": {}
+        },
+        // Windows
+        {
+            "label": "Motors: Build all (Windows)",
+            "group": "build",
+            "type": "shell",
+            "command": "mingw32-make",
+            "args": ["-C", "BLDC_FOC_settings", "all", "-j4"],
+            "windows": {} 
+        },
+        {
+            "label": "Motors: Build clean (Windows)",
+            "group": "build",
+            "type": "shell",
+            "command": "mingw32-make",
+            "args": ["-C", "BLDC_FOC_settings", "clean"],
+            "windows": {} 
+        }
+    ]
+}
