@@ -86,7 +86,7 @@ typedef struct __attribute__((packed)) {
 typedef struct __attribute__((packed)) {
     uint8_t   startByte;    // 0xBB
     uint8_t   status;       //
-    float_t   speed_rpm;    // 
+    float     speed_rpm;    // 
     float     current_Iq;   // 
     float     current_Id;   // 
     uint8_t   checksum;     // XOR
@@ -275,6 +275,7 @@ int main(void)
       case CMD_HELLO:
        send_init(&huart2);
        init_completed = 1;
+       last_feedback_time = HAL_GetTick();
        break;
       case CMD_INIT:
        MC_ProgramSpeedRampMotor1(0, 0);

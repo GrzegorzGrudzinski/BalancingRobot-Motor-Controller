@@ -7,6 +7,7 @@ Release/
 
 .vsmotors*
 browse.vc*
+*.code-workspace
 settings.json
 launch.json
 
